@@ -98,7 +98,7 @@ A command can be marked as ``runOnServer``, in which case it will be replicated 
 
 .. note::
 
-  In such a case, the command method can have a ``final EntityRef`` parameter. This will be populated with the Client entity of the calling player.
+  In such a case, the command method can have a ``final EntityRef`` parameter with ``@Sender`` annotation. This will be populated with the Client entity of the calling player. If the annotation is missing the command it will be logged that there is a command using ``final EntityRef`` but does not have the annotation. Running such a command will return a ``NullPointerException``.
 
   .. code-block:: java
 
